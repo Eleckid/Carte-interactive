@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Carte Interactive des campus de l'Université Sorbonne Paris Nord</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,11 +34,12 @@
     }).addTo(map);
 
     
-    L.marker([48.9572, 2.3404]).addTo(map); // Villetaneuse
-    L.marker([48.9389648, 2.3547714]).addTo(map); // Saint-Denis
+    L.marker([48.9572, 2.3404]).bindPopup('<p>Campus de Villetaneuse</p>').openPopup().addTo(map); // Villetaneuse
+    L.marker([48.9389648, 2.3547714]).bindPopup('<p>Campus de Saint-Denis</p>').openPopup().addTo(map); // Saint-Denis
     L.marker([48.91409, 2.41941]).addTo(map); // Bobigny
     L.marker([48.94601, 2.25457]).addTo(map); // Argenteuil
-
+    
+//    L.marker([48.9572, 2.3404]).bindPopup('<p> Yooo </p>').openPopup();
     
 </script>
 
