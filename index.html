@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/leaflet-list-markers.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 
 <body>
-    <h3>Carte Interactive</h3>
+   
+    <header>
+        <h3>Carte Interactive des campus de l'Université Sorbonne Paris Nord</h3>
+        <a href="https://www.univ-paris13.fr" target="_blank"> <img src="https://www.univ-paris13.fr/wp-content/uploads/logoUSPN-site-1-1.png" alt="Logo USPN" class="logo-uspn"> </a>
+    </header>
+
     <div id="mapid"></div>
 
+<noscript><p>Merci de bien vouloir activer Javascript sur votre navigateur</p></noscript>
 
 </body>
 
 <script type="text/javascript">
-    var map = L.map('mapid').setView([48.9572, 2.3404], 15.7);
+    var map = L.map('mapid').setView([48.9572, 2.3404], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-</script>
 
-
-
-
-
-
-
-</html>
-
-
+    // Villetaneuse
+    L.marker([48.9572, 2.3404]).addTo(map); 
+    L.marker([48.9389648, 2.3547714]).addTo(map); // Saint-Denis
+    L.marker([48.91409, 2.41941]).addTo(map); // Bobigny
+    L.marker([48.94601, 2.25457]).addTo(map); // Argenteuil
 
     
+</script>
+
+</html>

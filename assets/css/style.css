@@ -2,14 +2,39 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 #mapid {
     height: 100vh;
-    width: 100vh;
+    position: none;
 }
 
-h3{
-    text-align: center;
+
+
+header{
+    display: flex;
+    justify-content: space-between;
     padding: 1em;
+    align-items: center;
+    background: white;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.logo-uspn {
+    width: 120px;
+    height: auto;
+}
+
+.leaflet-top{
+    top: 120px;
+}
+
+p {
+    text-align: center;
 }
