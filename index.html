@@ -15,17 +15,42 @@
 </head>
 
 <body>
-   
+
     <header>
-        <h3>Carte Interactive des campus de l'Université Sorbonne Paris Nord</h3>
+        <h1>Carte Interactive des campus de l'université Sorbonne Paris Nord</h1>
         <a href="https://www.univ-paris13.fr" target="_blank"> <img src="https://www.univ-paris13.fr/wp-content/uploads/logoUSPN-site-1-1.png" alt="Logo USPN" class="logo-uspn"> </a>
     </header>
 
     <div id="mapid"></div>
 
-<noscript><p>Merci de bien vouloir activer Javascript sur votre navigateur</p></noscript>
+    <noscript>
+        <p>Merci de bien vouloir activer Javascript sur votre navigateur.</p>
+    </noscript>
 
 </body>
+
+<div class="leaflet-menu">
+    <h4>Sites et Campus</h4>
+    <hr>
+    <div class="input-container">
+        <input type="checkbox" id="argenteuil" name="argenteuil">
+        <label for="argenteuil">Argenteuil</label>
+    </div>
+    <div class="input-container">
+        <input type="checkbox" id="bobigny" name="bobigny">
+        <label for="bobigny">Bobigny</label>
+    </div>
+
+    <div class="input-container">
+        <input type="checkbox" id="saint-denis" name="saint-denis">
+        <label for="saint-denis">Saint-Denis</label>
+    </div>
+
+    <div class="input-container">
+        <input type="checkbox" id="villetaneuse" name="villetaneuse">
+        <label for="villetaneuse">Villetaneuse</label>
+    </div>
+</div>
 
 <script type="text/javascript">
     var map = L.map('mapid').setView([48.9572, 2.3404], 12);
@@ -33,14 +58,43 @@
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    
-    L.marker([48.9572, 2.3404]).bindPopup('<div class="inside-popup"><p>Campus de Villetaneuse</p></div>').openPopup().addTo(map); // Villetaneuse
-    L.marker([48.9389648, 2.3547714]).bindPopup('<p>Campus de Saint-Denis</p>').openPopup().addTo(map); // Saint-Denis
-    L.marker([48.91409, 2.41941]).addTo(map); // Bobigny
-    L.marker([48.94601, 2.25457]).addTo(map); // Argenteuil
-    
-//    L.marker([48.9572, 2.3404]).bindPopup('<p> Yooo </p>').openPopup();
-    
-</script>
 
-</html>
+    L.marker([48.9572, 2.3404]).bindPopup('<img src="assets/img/Paris-13.jpg" alt="Photo du campus de l\'Université Sorbonne Paris Nord"><h3>Campus de Villetaneuse</h3><div class="description"><p>L\'université Sorbonne Paris Nord est l\'une des universités qui ont succédé à la Sorbonne après l\'éclatement de l\'université de Paris en treize universités autonomes en 1968.<br><br>Successivement nommée « université Paris-XIII », « université Paris-Nord », « université Paris-XIII-Paris-Nord », puis « université Paris-XIII » (nom adopté en 2014), elle a connu plusieurs appellations au cours de cette moitié de siècle.<br><br>Elle est rebaptisée « université Sorbonne-Paris-Nord » le 1er janvier 2020.</p></div>').openPopup().addTo(map); // Villetaneuse
+
+    L.marker([48.9389648, 2.3547714]).bindPopup('<h3>Campus de Saint-Denis</h3>').openPopup().addTo(map); // Saint-Denis
+
+    L.marker([48.91409, 2.41941]).bindPopup('<h3>Campus de Bobigny</h3>').openPopup().addTo(map); // Bobigny
+
+    L.marker([48.94601, 2.25457]).bindPopup('<h3>Campus d\'Argenteuil</h3>').openPopup().addTo(map); // Argenteuil
+
+    coords = [
+        [48.9572, 2.3404],
+        [48.9389648, 2.3547714],
+        [48.9389648, 2.3547714],
+        [48.91409, 2.41941],
+        [48.94601, 2.25457]
+    ];
+
+    let l = coords.length;
+
+    var villeta = document.querySelector('#villetaneuse');
+    var argenteuil = document.querySelector('#argenteuil');
+    var bobigny = document.querySelector('#bobigny');
+    var saintDenis = document.querySelector('#saint-denis');
+
+    sites = [villeta, bobigny, saintDenis, argenteuil];
+
+
+
+    for (let i = 0; i < l; i++) {
+        var marker = L.marker(coords[i]).addTo(map);
+
+
+        // Zoom in / fly to
+
+        sites[i].addEventListener("click", () => {
+            map.flyTo(coords[i], 18);
+        })
+
+    }
+</script></html>
