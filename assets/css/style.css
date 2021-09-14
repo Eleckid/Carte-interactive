@@ -8,9 +8,10 @@
 #mapid {
     height: 100vh;
     position: none;
+    margin-top: 90px;
 }
 
-h1{
+h1 {
     font-size: 1.5em;
 }
 
@@ -72,12 +73,12 @@ img {
     margin: 0;
 }
 
-.description{
+.description {
     padding: 1em;
     text-align: justify
 }
 
-.leaflet-menu{
+.leaflet-menu {
     position: fixed;
     top: 130px;
     left: 70px;
@@ -98,29 +99,11 @@ input[type=checkbox] {
 }
 
 
+.menu-title-container {
+    margin-bottom: 1em;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.menu-title-container:last-child {
+    margin-bottom: 1em;
+}
