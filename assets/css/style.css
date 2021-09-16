@@ -84,6 +84,11 @@ input[type=checkbox] {
     margin-right: 10px;
 }
 
+.accordion-button {
+    border-bottom: 2px solid white;
+
+}
+
 
 .accordion-button::after,
 .accordion-button:not(.collapsed)::after {
@@ -114,9 +119,4 @@ h3 {
 
 input:checked {
     background-color: #001f60
-}
-
-.accordion-button:first-child {
-    border-bottom: 2px solid white;
-
 }
