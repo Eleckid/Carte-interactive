@@ -28,7 +28,6 @@
     <div class="container-fluid no-gutter">
 
         <div class="row no-gutter">
-            <!--<div class="col-12 no-gutter">-->
 
             <div id="mapid"></div>
 
@@ -49,7 +48,9 @@
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                 Sites
+
                             </button>
+
                         </h2>
                         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
@@ -85,12 +86,12 @@
 
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 Patrimoine culturel
                             </button>
                         </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <div class="input-container">
                                     <input type="checkbox" id="bancs" name="bancs">
@@ -151,7 +152,7 @@
     L.marker([48.91409, 2.41941]).bindPopup('<h3>Campus de Bobigny</h3>').openPopup().addTo(map); // Bobigny
 
     L.marker([48.94601, 2.25457]).bindPopup('<img src="assets/img/argenteuil.png" alt="Bâtiment d\'Argenteuil"><h3>Campus d\'Argenteuil</h3><div class="description"><p>Le bâtiment du campus d’Argenteuil était un commissariat. À noter qu’entre 1979 et 1993, l’université Sorbonne Paris Nord disposait déjà d’une antenne Argenteuillaise. Jean François Méla, ancien Président de l’université ne souhaitant plus que l’université soit éclatée, a décidé de fermer cette antenne en 1993. C’est en 2011 que cette antenne de l’université dans le Val-d’Oise est de nouveau ouverte.</p></div>').openPopup().addTo(map); // Argenteuil
-    
+
     L.marker([48.91200518277618, 2.3613174983764798]).bindPopup('<img src="assets/img/halle-montjoie.jpg" alt="La Halle Montjoie""><h3>La Halle Montjoie</h3><div class="description"><p>La halle Montjoie n’a pas toujours été une implantation universitaire. D’abord usine de construction de métro de l’entreprise Jeumont Schneider, puis friche industrielle, elle a été reconvertie dans les années 90 par l’architecte Renée Gailhoustet. Cette halle est devenue tour à tour un immeuble de bureau puis un campus de l’université Sorbonne Paris Nord. C’est en 2003 que la halle ouvre aux étudiants et change de nom pour devenir halle Montjoie, en référence au quartier de la ZAC Montjoie qui l’entoure.</p></div>').openPopup().addTo(map); // La Halle Monjoie
 
 
@@ -170,8 +171,7 @@
     L.marker([48.91289, 2.42036]).bindPopup('<img src="assets/img/sante.jpg" alt="Le mot "sante""><h3>Le mot "santé"</h3><div class="description"><p>L’artiste Pierre Di Siullo a réalisé l’œuvre du 1% artistique du campus de Bobigny. À cette occasion, il a créé le mot “Santé”, qui a été accroché sur le campus au niveau de l’entrée rue Marcel Cachin.<br><br>Entrée historique de l’UFR SMBH Léonard de Vinci au 74 avenue Marcel Cachin à Bobigny. On peut voir au premier plan le mot “Santé”, oeuvre de l’artiste Pierre Di Sciullo au titre du 1% artistique réalisé en 1997. En arrière-plan on aperçoit la tour de l’Illustration avant l’installation de l’horloge.</p></div>').openPopup().addTo(map); // Le mot santé
 
     L.marker([48.939, 2.35453]).bindPopup('<img src="assets/img/sculpture-iut.jpg" alt="La sculpture de l\'IUT de Saint-Denis""><h3>La sculpture de l\'IUT de Saint-Denis</h3><div class="description"><p>L’artiste cubain Augustin Cardenas a réalisé une statue dans le cadre du 1% artistique du campus de l’IUT de Saint-Denis. À découvrir dans le jardin !</p></div>').openPopup().addTo(map); // La sculpture de l'IUT de Saint-Denis
-
-
+    
 
     coords = [
         [48.9572, 2.3404],
@@ -202,6 +202,7 @@
     var sante = document.querySelector('#sante');
     var sculpture = document.querySelector('#sculpture');
     var halleMontjoie = document.querySelector('#plaine-sd');
+   
 
 
     sites = [villeta, saintDenis, bobigny, argenteuil, bancs, rochers, colonne, mires, tourIllustration, sante, sculpture, halleMontjoie];
