@@ -11,9 +11,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="assets/css/leaflet-list-markers.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+     <link rel="stylesheet" href="assets/css/leaflet-search.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+   <script src="assets/js/leaflet-search.js"></script>
+   
+
+
 </head>
 
 <body>
@@ -22,111 +29,113 @@
     <div class="container-fluid no-gutter">
 
         <div class="row no-gutter">
-
-            <div id="mapid"></div>
+            <div class="col-xs-4">
+                <div id="mapid"></div>
+            </div>
 
             <noscript>
                 <p>Merci de bien vouloir activer Javascript sur votre navigateur.</p>
             </noscript>
+            
+                <div class="leaflet-menu col-xs-4">
+                    <div class="menu-title-container">
+                        <img src="assets/img/bandeau.png" alt="">
 
+                    </div>
+            
 
-            <div class="leaflet-menu">
-                <div class="menu-title-container">
-                    <img src="assets/img/bandeau.png" alt="">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Sites
+                                    <div style="width: 100%">
+                                        <hr>
+                                    </div>
 
-                </div>
+                                </button>
 
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="input-container">
+                                        <input type="checkbox" id="argenteuil" name="argenteuil">
+                                        <label for="argenteuil">Argenteuil</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="saint-denis" name="saint-denis">
+                                        <label for="saint-denis">Saint-Denis</label>
+                                    </div>
 
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                Sites
-                                <div style="width: 100%"><hr></div>
-
-                            </button>
-
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <div class="input-container">
-                                    <input type="checkbox" id="argenteuil" name="argenteuil">
-                                    <label for="argenteuil">Argenteuil</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="saint-denis" name="saint-denis">
-                                    <label for="saint-denis">Saint-Denis</label>
-                                </div>
-
-                                <div class="input-container">
-                                    <input type="checkbox" id="bobigny" name="bobigny">
-                                    <label for="bobigny">Bobigny</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="villetaneuse" name="villetaneuse">
-                                    <label for="villetaneuse">Villetaneuse</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="plaine-sd" name="plaine-sd">
-                                    <label for="plaine-sd">Plaine-Saint-Denis</label>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="bobigny" name="bobigny">
+                                        <label for="bobigny">Bobigny</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="villetaneuse" name="villetaneuse">
+                                        <label for="villetaneuse">Villetaneuse</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="plaine-sd" name="plaine-sd">
+                                        <label for="plaine-sd">Plaine-Saint-Denis</label>
+                                    </div>
                                 </div>
                             </div>
+
+
+
                         </div>
 
+                    </div>
 
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Patrimoine culturel
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="input-container">
+                                        <input type="checkbox" id="bancs" name="bancs">
+                                        <label for="bancs">Les bancs</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="rochers" name="rochers">
+                                        <label for="rochers">Les rochers</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="colonne" name="colonne">
+                                        <label for="colonne">La colonne</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="mires" name="mires">
+                                        <label for="mires">Les mires Interstellaires</label>
+                                    </div>
+
+                                    <div class="input-container">
+                                        <input type="checkbox" id="tourIllustration" name="tourIllustration">
+                                        <label for="tourIllustration">La Tour de l'Illustration</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="sante" name="sante">
+                                        <label for="sante">Le mot "santé"</label>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="checkbox" id="sculpture" name="sculpture">
+                                        <label for="sculpture">La sculpture de l'IUT de Saint-Denis</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
 
                     </div>
 
                 </div>
-
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                Patrimoine culturel
-                            </button>
-                        </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <div class="input-container">
-                                    <input type="checkbox" id="bancs" name="bancs">
-                                    <label for="bancs">Les bancs</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="rochers" name="rochers">
-                                    <label for="rochers">Les rochers</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="colonne" name="colonne">
-                                    <label for="colonne">La colonne</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="mires" name="mires">
-                                    <label for="mires">Les mires Interstellaires</label>
-                                </div>
-
-                                <div class="input-container">
-                                    <input type="checkbox" id="tourIllustration" name="tourIllustration">
-                                    <label for="tourIllustration">La Tour de l'Illustration</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="sante" name="sante">
-                                    <label for="sante">Le mot "santé"</label>
-                                </div>
-                                <div class="input-container">
-                                    <input type="checkbox" id="sculpture" name="sculpture">
-                                    <label for="sculpture">La sculpture de l'IUT de Saint-Denis</label>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-                </div>
-
-            </div>
         </div>
     </div>
 

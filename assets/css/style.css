@@ -63,7 +63,8 @@ img {
     top: 50px;
     left: 30px;
     background: #001f60;
-    width: 400px;
+    width: 22%;
+    min-width: 257px;
     z-index: 1200;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /*    padding: 1em;*/
