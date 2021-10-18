@@ -107,13 +107,6 @@ h3 {
     font-size: 1.5em;
 }
 
-.no-gutter {
-    padding-left: 0;
-    padding-right: 0;
-    --bs-gutter-x: 0;
-    --bs-gutter-y: 0;
-}
-
 .accordion-button:focus {
     box-shadow: none;
 }
