@@ -114,3 +114,30 @@ h3 {
 input:checked {
     background-color: #001f60
 }
+
+.leaflet-control-search {
+    width: 100%;
+    padding: 0.5em;
+    background-color: inherit;
+}
+
+#searchtext47{
+    height: 50px;
+    color: black;
+    display: block !important;
+    width: 100%;
+    
+}
+
+
+.search-exp{
+    background-color: #001f60 !important;
+}
+
+.search-button{
+    display: none !important;
+}
+
+.search-input{
+    margin: 0 !important;
+}

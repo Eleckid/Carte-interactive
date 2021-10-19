@@ -120,7 +120,7 @@ for (let i = 0; i < l; i++) {
 		{"loc":[41.236175,13.273590], "title":"skyblue"},
 		{"loc":[41.546175,13.473590], "title":"yellow"},
 		{"loc":[41.239190,13.032145], "title":"white"},
-        {"loc":[48.91200518277618, 2.3613174983764798], "title":"Plaine-Saint-Denis", "popup": "test"},
+        {"loc":[48.91200518277618, 2.3613174983764798], "title":"Plaine-Saint-Denis", "popup" : '<img src="assets/img/sculpture-iut.jpg" alt="La sculpture de l\'IUT de Saint-Denis""><h3>La sculpture de l\'IUT de Saint-Denis</h3><div class="description"><p>L’artiste cubain Augustin Cardenas a réalisé une statue dans le cadre du 1% artistique du campus de l’IUT de Saint-Denis. À découvrir dans le jardin !</p></div>'}
         
 	];
 
@@ -128,7 +128,7 @@ for (let i = 0; i < l; i++) {
 //
 //	map.addLayer(new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));	//base layer
 //
-	var markersLayer = L.layerGroup([campVilletaneuse,campBobigny,campArgenteuil,campSaintDenis,campPlaineStDenis,artBancs,artColonne,artInterstellaires,artIllustration,artSante,artSculpture]);	//layer contain searched elements
+	var markersLayer = L.layerGroup();	//layer contain searched elements
 	map.addLayer(markersLayer);
 
 	var controlSearch = new L.Control.Search({layer: markersLayer, initial: false, position:'topright'});
@@ -141,9 +141,9 @@ for (let i = 0; i < l; i++) {
 		var title = data[i].title,	//value searched
 			loc = data[i].loc,		//position found
             popup = data[i].popup,
-			marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
-		marker.bindPopup('title: ' + popup );
-        marker.bindPopup();
+			marker = new L.Marker(new L.latLng(loc), {title: title}, {popup: popup} );//se property searched
+		marker.bindPopup(popup);
+        marker.openPopup();
 		markersLayer.addLayer(marker);
 	}
 
